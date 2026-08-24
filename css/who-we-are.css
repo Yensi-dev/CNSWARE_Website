@@ -1,0 +1,171 @@
+/* ===== CNSWARE — Who We Are ===== */
+:root{
+  --navy:#0a1e40;
+  --navy-2:#0d2a56;
+  --ink:#101a2e;
+  --muted:#5b6478;
+  --line:#e4e9f1;
+  --soft:#f6f8fb;
+  --white:#fff;
+  --icon:#1f4e8c;
+  --icon-tint:#eaf1fb;
+  --icon-tint-hover:#dde9fa;
+  --shadow:0 16px 40px rgba(9,25,58,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:'Inter',Segoe UI,Arial,sans-serif;
+  color:var(--ink);
+  background:#fff;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:min(1180px,92%);margin:auto}
+.narrow{max-width:760px;text-align:center}
+
+/* Header */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.97);
+  border-bottom:1px solid var(--line);
+}
+.nav{height:84px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+.brand strong{display:block;font-size:24px;font-weight:800;letter-spacing:.02em;color:var(--navy);line-height:1.1}
+.brand span{font-size:11.5px;color:var(--muted);letter-spacing:.01em;display:block;max-width:170px;line-height:1.35}
+.nav-links{display:flex;gap:34px;font-size:14.5px}
+.nav-links a{position:relative;padding:10px 0;color:var(--navy);font-weight:500}
+.nav-links a.active{font-weight:700}
+.nav-links a.active:after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--navy)
+}
+
+/* Hero */
+.hero{
+  min-height:calc(100vh - 85px);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  background:
+    linear-gradient(100deg,rgba(6,17,38,.92) 0%,rgba(6,17,38,.82) 40%,rgba(6,17,38,.25) 75%),
+    var(--hero) center/cover no-repeat;
+}
+.hero-inner{padding:100px 0;max-width:620px}
+.eyebrow{color:#8fb3ec;font-weight:700;text-transform:uppercase;letter-spacing:.09em;font-size:13px;margin-bottom:14px}
+.hero h1{font-size:clamp(36px,4.6vw,54px);line-height:1.15;letter-spacing:-.01em;margin:0 0 20px;font-weight:800}
+.hero p{font-size:17px;line-height:1.7;max-width:520px;color:#dbe4f2;margin:0 0 30px}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 28px;border-radius:3px;font-weight:700;font-size:14px;letter-spacing:.02em;
+  background:var(--navy);color:#fff;border:1px solid var(--navy);
+  transition:.2s ease;
+}
+.btn:hover{background:#081733;transform:translateY(-1px);box-shadow:0 8px 18px rgba(9,25,58,.25)}
+.btn.light{background:#fff;color:var(--navy);border-color:#fff}
+.btn.light:hover{background:#eef2f8}
+.btn.outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.btn.outline:hover{background:rgba(255,255,255,.1)}
+
+.section{padding:96px 0;min-height:calc(100vh - 85px);display:flex;align-items:center}
+.section h2{font-size:clamp(28px,3.2vw,36px);line-height:1.25;letter-spacing:-.01em;margin:0 0 22px;color:var(--navy);font-weight:800}
+.accent{display:inline-block;width:48px;height:3px;background:var(--icon);border-radius:2px;margin-bottom:22px}
+.narrow .accent{margin-left:auto;margin-right:auto}
+
+/* Intro / We Connect section */
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.intro-text p{font-size:17px;line-height:1.85;color:var(--muted);margin:0}
+.intro-media{
+  min-height:440px;border-radius:14px;overflow:hidden;
+  background:var(--img) center/cover no-repeat;
+  box-shadow:var(--shadow);
+}
+
+/* Built around your business */
+.built-around{background:var(--soft)}
+.built-head{max-width:720px;margin:0 auto 50px;text-align:center}
+.built-head p{font-size:16.5px;color:var(--muted);line-height:1.75;margin:0}
+
+.icon-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
+}
+.icon-item{
+  background:#fff;
+  padding:36px 24px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  box-shadow:0 1px 2px rgba(9,25,58,.04), 0 10px 24px rgba(9,25,58,.05);
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:16px;
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.icon-item:hover{
+  transform:translateY(-4px);
+  box-shadow:0 4px 10px rgba(9,25,58,.06), 0 20px 36px rgba(9,25,58,.10);
+  border-color:#d7e3f5;
+}
+.icon-badge{
+  width:58px;height:58px;
+  border-radius:15px;
+  background:var(--icon-tint);
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s ease;
+}
+.icon-item:hover .icon-badge{ background:var(--icon-tint-hover); }
+.icon-svg{width:28px;height:28px;color:var(--icon);transition:transform .2s ease}
+.icon-item:hover .icon-svg{transform:translateY(-1px)}
+.icon-item h3{margin:0;color:var(--navy);font-size:15px;font-weight:700;letter-spacing:-.005em}
+
+/* Global expertise dark section */
+.global{
+  color:#fff;
+  background:
+    linear-gradient(180deg,rgba(6,15,34,.94),rgba(6,15,34,.97)),
+    var(--globe) center/cover no-repeat;
+  text-align:center;
+}
+.global-inner{max-width:720px;margin:0 auto}
+.global .eyebrow{color:#8fb3ec}
+.global h2{color:#fff;margin-bottom:24px}
+.global p{font-size:16.5px;line-height:1.8;color:#c9d6ea;margin:0}
+.global .statement{font-weight:700;color:#fff;font-size:19px;line-height:1.6;margin:28px 0 42px}
+.global-brand{margin-bottom:34px}
+.global-brand strong{display:block;font-size:26px;font-weight:800;letter-spacing:.02em}
+.global-brand span{display:block;font-size:13px;color:#a9bcda;margin-top:6px}
+.global-actions{display:flex;gap:16px;justify-content:center}
+.global .btn:not(.outline){background:#fff;color:var(--navy);border-color:#fff}
+.global .btn:not(.outline):hover{background:#eef2f8}
+
+/* Footer */
+.site-footer{background:#04122a;color:#fff;padding:34px 0}
+.footer-row{display:flex;align-items:center;justify-content:space-between;gap:24px;font-size:13.5px;color:#a9bcda}
+.footer-links{display:flex;gap:22px}
+.footer-links a{color:#d3ddef}
+.footer-links a:hover{color:#fff}
+
+@media(max-width:900px){
+  .nav{height:auto;padding:16px 0;align-items:flex-start;flex-wrap:wrap}
+  .nav-links{gap:16px;flex-wrap:wrap}
+  .icon-grid{grid-template-columns:repeat(2,1fr)}
+  .section{padding:70px 0;min-height:auto}
+  .hero{min-height:auto}
+  .global-actions{flex-direction:column;align-items:center}
+  .intro-grid{grid-template-columns:1fr;gap:40px}
+  .intro-media{min-height:320px;order:-1}
+}
+@media(max-width:600px){
+  .brand strong{font-size:21px}
+  .hero-inner{padding:64px 0}
+  .icon-grid{grid-template-columns:1fr}
+  .footer-row{flex-direction:column;align-items:flex-start}
+  .intro-media{min-height:240px}
+}

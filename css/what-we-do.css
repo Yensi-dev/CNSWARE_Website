@@ -1,0 +1,106 @@
+/* ===== CNSWARE — What We Do (page-specific blocks) =====
+   Requires variables.css + main.css loaded first (uses --navy, --blue2,
+   --muted, --line, --soft, --icon-tint, --font-heading, .section, .btn). */
+
+/* Service cards */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:32px;
+}
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 1px 2px rgba(8,31,70,.04), 0 10px 24px rgba(8,31,70,.05);
+  display:flex;
+  flex-direction:column;
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 4px 10px rgba(8,31,70,.06), 0 20px 36px rgba(8,31,70,.10);
+  border-color:#cfe0f8;
+}
+.card-media{
+  height:180px;
+  background:var(--img) center/cover no-repeat;
+}
+.card-body{padding:28px 26px 32px;display:flex;flex-direction:column;gap:12px;flex:1}
+.card-body h3{margin:0;font-family:var(--font-heading);color:var(--navy);font-size:18px;font-weight:700}
+.card-body p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.7;flex:1}
+.link{
+  color:var(--blue2);font-weight:700;font-size:14px;
+  display:inline-flex;align-items:center;gap:6px;
+  transition:gap .2s ease;
+}
+.link:hover{gap:10px}
+
+/* Our Approach — process steps */
+.process{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:40px;
+  margin-top:56px;
+}
+.step{text-align:center}
+.step .num{
+  width:52px;height:52px;
+  border-radius:50%;
+  background:var(--icon-tint);
+  color:var(--blue2);
+  font-family:var(--font-heading);
+  font-weight:800;
+  font-size:16px;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 20px;
+}
+.step h3{margin:0 0 10px;font-family:var(--font-heading);color:var(--navy);font-size:17px;font-weight:700}
+.step p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.7}
+
+/* Outcomes — on the dark section */
+.outcomes{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:24px;
+  margin-top:48px;
+}
+.outcome{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  padding:28px 22px;
+  border-radius:16px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+}
+.outcome strong{font-family:var(--font-heading);font-size:16px;font-weight:700;color:#fff}
+.outcome span{font-size:14px;color:#b8d0f0;line-height:1.6}
+
+/* Closing CTA band */
+.cta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:32px;
+  flex-wrap:wrap;
+  background:var(--soft);
+  border-radius:24px;
+  padding:56px;
+}
+.cta h2{margin:0 0 12px}
+.cta .lead{margin:0;color:var(--muted);font-size:16px;max-width:480px}
+
+@media(max-width:900px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .process{grid-template-columns:repeat(2,1fr);gap:36px}
+  .outcomes{grid-template-columns:repeat(2,1fr)}
+  .cta{padding:44px}
+}
+@media(max-width:600px){
+  .cards{grid-template-columns:1fr}
+  .process{grid-template-columns:1fr;gap:32px}
+  .outcomes{grid-template-columns:1fr}
+  .cta{flex-direction:column;align-items:flex-start;padding:36px;border-radius:18px}
+}

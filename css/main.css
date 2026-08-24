@@ -1,0 +1,190 @@
+/* ===== CNSWARE — Main page styles (hero, sections, icon grid, global) =====
+   Requires variables.css to be loaded first (uses --navy, --blue, --blue2,
+   --muted, --line, --icon, --icon-tint, --icon-tint-hover, --font-heading). */
+
+/* Hero */
+.hero{
+  min-height:clamp(540px,82vh,720px);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  background:
+    linear-gradient(100deg,rgba(7,27,58,.93) 0%,rgba(13,71,163,.78) 42%,rgba(13,71,163,.28) 78%),
+    var(--hero) center/cover no-repeat;
+}
+.hero-inner{padding:140px 0;max-width:620px}
+.eyebrow{color:#9cc4f7;font-weight:700;text-transform:uppercase;letter-spacing:.09em;font-size:13px;margin-bottom:16px}
+.hero h1{font-family:var(--font-heading);font-size:clamp(36px,4.6vw,54px);line-height:1.18;letter-spacing:-.01em;margin:0 0 26px;font-weight:800}
+.hero p{font-size:17px;line-height:1.7;max-width:520px;color:#e2ecfa;margin:0 0 36px}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 28px;border-radius:3px;font-weight:700;font-size:14px;letter-spacing:.02em;
+  background:var(--blue);color:#fff;border:1px solid var(--blue);
+  transition:.2s ease;
+}
+.btn:hover{background:var(--blue2);border-color:var(--blue2);transform:translateY(-1px);box-shadow:0 8px 18px rgba(13,71,163,.30)}
+.btn.light{background:#fff;color:var(--blue);border-color:#fff}
+.btn.light:hover{background:#eef4fe}
+.btn.outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.btn.outline:hover{background:rgba(255,255,255,.12)}
+
+/* Generic section heading */
+.section{padding:120px 0}
+.section h2{font-family:var(--font-heading);font-size:clamp(28px,3.2vw,38px);line-height:1.3;letter-spacing:-.01em;margin:0 0 28px;color:var(--navy);font-weight:700}
+.section .eyebrow{color:var(--blue2)}
+.accent{display:inline-block;width:48px;height:3px;background:var(--blue2);border-radius:2px;margin-bottom:28px}
+.narrow .accent{margin-left:auto;margin-right:auto}
+
+/* Section background variants — reusable on any page */
+.section.soft{background:var(--soft)}
+.section.dark{background:var(--navy);color:#fff}
+.section.dark h2{color:#fff}
+.section.dark .eyebrow{color:#9cc4f7}
+.section.dark p{color:#d6e6fb}
+
+/* Tighter section padding — use on a section that just wraps a .cta/.global-cta
+   band, since that band already carries its own internal padding. Prevents
+   double spacing (especially awkward right before the footer). */
+.section.tight{padding:64px 0}
+
+/* A dark section sitting directly above the footer needs its own shade so it
+   doesn't visually merge with the footer's navy background. */
+.section.dark.pre-footer{background:var(--blue)}
+
+/* We Connect the Systems Behind the Work — merged intro + icon grid */
+.connect{background:#fff;padding:160px 0}
+.built-head{max-width:780px;margin:0 auto 88px;text-align:center}
+.built-head p{font-size:17px;color:var(--muted);line-height:1.9;margin:0}
+
+.icon-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:28px;
+}
+.icon-item{
+  background:#fff;
+  padding:44px 28px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  box-shadow:0 1px 2px rgba(8,31,70,.04), 0 10px 24px rgba(8,31,70,.05);
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:20px;
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.icon-item:hover{
+  transform:translateY(-4px);
+  box-shadow:0 4px 10px rgba(8,31,70,.06), 0 20px 36px rgba(8,31,70,.10);
+  border-color:#cfe0f8;
+}
+.icon-badge{
+  width:58px;height:58px;
+  border-radius:15px;
+  background:var(--icon-tint);
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s ease;
+}
+.icon-item:hover .icon-badge{ background:var(--icon-tint-hover); }
+.icon-svg{width:28px;height:28px;color:var(--icon);transition:transform .2s ease}
+.icon-item:hover .icon-svg{transform:translateY(-1px)}
+.icon-item h3{margin:0;font-family:var(--font-heading);color:var(--navy);font-size:15.5px;font-weight:600;letter-spacing:-.005em}
+
+/* Plain variant: icon + label only, no card/border/shadow */
+.icon-grid.plain{gap:64px 40px}
+.icon-grid.plain .icon-item{
+  background:transparent;
+  border:none;
+  box-shadow:none;
+  padding:0;
+  border-radius:0;
+  gap:18px;
+}
+.icon-grid.plain .icon-item:hover{
+  transform:none;
+  box-shadow:none;
+  border-color:transparent;
+}
+.icon-grid.plain .icon-badge{
+  width:auto;height:auto;
+  border-radius:0;
+  background:transparent;
+}
+.icon-grid.plain .icon-item:hover .icon-badge{background:transparent}
+.icon-grid.plain .icon-svg{width:34px;height:34px}
+.icon-grid.plain .icon-item:hover .icon-svg{transform:translateY(-2px)}
+.icon-grid.plain .icon-item h3{font-size:15px;font-weight:600}
+
+/* Global expertise section — full-bleed split: image left, dynamic gradient text panel right */
+.global{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  width:100%;
+  min-height:100vh;
+  color:#fff;
+}
+.global-media{
+  background:var(--globe) center/cover no-repeat;
+}
+.global-text{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  text-align:right;
+  padding:90px 6vw;
+  overflow:hidden;
+  background:
+    radial-gradient(130% 160% at 100% 0%,rgba(255,255,255,.14) 0%,transparent 55%),
+    radial-gradient(120% 140% at 0% 100%,rgba(255,255,255,.08) 0%,transparent 60%),
+    linear-gradient(155deg,var(--navy) 0%,var(--blue) 58%,var(--blue2) 100%);
+}
+.global-text:before{
+  content:"";
+  position:absolute;
+  width:340px;height:340px;
+  border-radius:50%;
+  background:rgba(255,255,255,.06);
+  top:-120px;right:-100px;
+}
+.global-inner{max-width:520px;position:relative;z-index:1}
+.global .eyebrow{color:#9cc4f7}
+.global h2{color:#fff;margin-bottom:28px}
+.global p{font-size:16.5px;line-height:1.85;color:#d6e6fb;margin:0}
+.global .statement{font-weight:700;color:#fff;font-size:19px;line-height:1.7;margin:36px 0 0}
+
+/* Global CTA — white band with brand + buttons below the image section */
+.global-cta{background:#fff;text-align:center;padding:80px 0}
+.global-cta .global-brand{margin-bottom:36px}
+.global-cta .global-brand strong{display:block;font-family:var(--font-heading);font-size:28px;font-weight:800;letter-spacing:.02em;color:var(--navy)}
+.global-cta .global-brand span{display:block;font-size:14px;color:var(--muted);margin-top:8px}
+.global-cta .global-actions{display:flex;gap:18px;justify-content:center}
+.global-cta .btn.outline{background:transparent;color:var(--blue);border-color:var(--blue)}
+.global-cta .btn.outline:hover{background:var(--icon-tint)}
+
+@media(max-width:900px){
+  .icon-grid{grid-template-columns:repeat(2,1fr)}
+  .section{padding:100px 0;min-height:auto}
+  .connect{padding:110px 0}
+  .built-head{margin-bottom:64px}
+  .icon-grid.plain{gap:48px 32px}
+  .hero{min-height:auto}
+  .global-actions{flex-direction:column;align-items:center}
+  .global{grid-template-columns:1fr}
+  .global-media{min-height:280px}
+  .global-text{justify-content:center;text-align:center;padding:64px 8vw}
+  .global-inner{max-width:520px}
+  .section.tight{padding:48px 0}
+}
+@media(max-width:600px){
+  .hero-inner{padding:80px 0}
+  .section{padding:80px 0}
+  .connect{padding:80px 0}
+  .built-head{margin-bottom:48px}
+  .icon-grid{grid-template-columns:1fr}
+  .icon-grid.plain{gap:40px}
+  .section.tight{padding:40px 0}
+}

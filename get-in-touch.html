@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Get in Touch | CNSWARE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/navbar.css">
+<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/get-in-touch.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+<site-navbar current="get-in-touch.html" logo-src="img/CNSWARElogo.png"></site-navbar>
+<script src="components/Navbar.js" defer></script>
+
+<section class="hero" style="--hero:url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1800&q=85')">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="eyebrow">Get in Touch</div>
+      <h1>Let&rsquo;s Build What&rsquo;s Next.</h1>
+      <p>Every transformation starts with a conversation. Tell us about your goals, challenges, or project needs and our team will connect with you.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container form-wrap">
+    <div class="form-col">
+      <div class="eyebrow">Send Us a Message</div>
+      <h2>Start a conversation.</h2>
+      <form onsubmit="event.preventDefault(); document.getElementById('success').style.display='block';">
+        <div class="form-grid">
+          <input class="input" required placeholder="Full Name *">
+          <input class="input" required placeholder="Company *">
+          <input class="input" type="email" required placeholder="Business Email *">
+          <input class="input" placeholder="Phone">
+          <select class="full" required>
+            <option value="">How can we help you? *</option>
+            <option>Business Transformation</option>
+            <option>Enterprise Solutions</option>
+            <option>Manufacturing &amp; Operations</option>
+            <option>Supply Chain</option>
+            <option>Finance</option>
+            <option>Data, Integration &amp; Automation</option>
+            <option>Other</option>
+          </select>
+          <textarea class="full" placeholder="Tell us more about your project or challenge..."></textarea>
+          <div class="full"><button class="btn" type="submit">Send Message &rarr;</button></div>
+          <div id="success" class="full form-success">Thank you. Your message is ready to be connected to your preferred form backend.</div>
+        </div>
+      </form>
+    </div>
+    <aside class="contact-card">
+      <h3>Connect With Us</h3>
+      <div class="contact-line"><strong>Email</strong>info@cnsware.com</div>
+      <div class="contact-line"><strong>Website</strong>www.cnsware.com</div>
+      <hr>
+      <h3>Looking for talent?</h3>
+      <p>We&rsquo;re always interested in experienced professionals who enjoy solving complex business challenges through technology.</p>
+      <a class="btn" href="mailto:info@cnsware.com">Contact CNSWARE &rarr;</a>
+    </aside>
+  </div>
+</section>
+
+<section class="section soft">
+  <div class="container">
+    <div class="eyebrow">Global Delivery. Local Impact.</div>
+    <h2>Flexible support wherever the work happens.</h2>
+    <div class="icon-grid cols-5">
+      <div class="icon-item"><div class="icon">1</div><h3>On-Site Consulting</h3></div>
+      <div class="icon-item"><div class="icon">2</div><h3>Remote Delivery</h3></div>
+      <div class="icon-item"><div class="icon">3</div><h3>Hybrid Teams</h3></div>
+      <div class="icon-item"><div class="icon">4</div><h3>Project-Based Engagements</h3></div>
+      <div class="icon-item"><div class="icon">5</div><h3>Long-Term Support</h3></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="eyebrow">Our Offices</div>
+    <h2>Global reach. Connected delivery.</h2>
+    <div class="office-grid">
+      <div class="office" style="--img:url('https://images.unsplash.com/photo-1535498730771-e735b998cd64?auto=format&fit=crop&w=700&q=80')">
+        <div class="photo"></div>
+        <div class="body">
+          <h3>CNSWARE US</h3>
+          <p>100 Cummings Center Suite 328G<br>Beverly, MA 01915<br>United States<br>Tel: 978-867-0707</p>
+        </div>
+      </div>
+      <div class="office" style="--img:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=80')">
+        <div class="photo"></div>
+        <div class="body">
+          <h3>CNSWARE DR</h3>
+          <p>Av. Circunvalacion No. 2,<br>Veron, Punta Cana<br>Dominican Republic<br>Tel: 829-831-5200</p>
+        </div>
+      </div>
+      <div class="office" style="--img:url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=700&q=80')">
+        <div class="photo"></div>
+        <div class="body">
+          <h3>CNSWARE IN</h3>
+          <p>25 Girivihar, Godhani<br>Nagpur, Maharashtra 441111<br>India<br>Tel: 91 99757 04988</p>
+        </div>
+      </div>
+      <div class="office" style="--img:url('https://images.unsplash.com/photo-1518659526054-190340b32735?auto=format&fit=crop&w=700&q=80')">
+        <div class="photo"></div>
+        <div class="body">
+          <h3>CNSWARE MX</h3>
+          <p>Educacion 194 Int. 8 tercer piso<br>Burocrata, 78270 San Luis Potosi<br>Mexico<br>Tel: 52 444 892 2917</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark tight pre-footer">
+  <div class="container cta">
+    <div>
+      <h2>Let&rsquo;s start a conversation.</h2>
+      <p class="lead">We&rsquo;re here to help you connect the systems behind the work.</p>
+    </div>
+    <a class="btn light" href="mailto:info@cnsware.com">Email CNSWARE &rarr;</a>
+  </div>
+</section>
+
+<site-footer logo-src="img/CNSWARElogo.png"></site-footer>
+<script src="components/Footer.js" defer></script>
+
+<script src="js/reveal.js" defer></script>
+
+</body></html>
