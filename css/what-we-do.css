@@ -24,83 +24,103 @@
   border-color:#cfe0f8;
 }
 .card-media{
-  height:180px;
+  height:170px;
   background:var(--img) center/cover no-repeat;
 }
-.card-body{padding:28px 26px 32px;display:flex;flex-direction:column;gap:12px;flex:1}
-.card-body h3{margin:0;font-family:var(--font-heading);color:var(--navy);font-size:18px;font-weight:700}
-.card-body p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.7;flex:1}
-.link{
-  color:var(--blue2);font-weight:700;font-size:14px;
-  display:inline-flex;align-items:center;gap:6px;
-  transition:gap .2s ease;
+.card-body{padding:26px 26px 30px;display:flex;flex-direction:column}
+.card-icon{
+  width:44px;height:44px;
+  border-radius:12px;
+  background:var(--icon-tint);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:16px;
 }
-.link:hover{gap:10px}
+.card-icon .icon-svg{width:22px;height:22px;color:var(--icon)}
+.card-body h3{margin:0 0 8px;font-family:var(--font-heading);color:var(--navy);font-size:17px;font-weight:700}
+.card-body > p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
 
-/* Our Approach — process steps */
+.card-list{
+  list-style:none;
+  margin:16px 0 0;
+  padding:16px 0 0;
+  border-top:1px solid var(--line);
+  display:flex;
+  flex-direction:column;
+  gap:9px;
+}
+.card-list li{
+  position:relative;
+  padding-left:16px;
+  font-size:13.5px;
+  color:var(--muted);
+  line-height:1.5;
+}
+.card-list li:before{
+  content:"";
+  position:absolute;left:0;top:7px;
+  width:5px;height:5px;
+  border-radius:50%;
+  background:var(--blue2);
+}
+
+/* How We Work — process steps + closing statement, all in one dark band,
+   sized to the full viewport height */
+.howwework{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+}
+.howwework .container{width:min(1180px,92%);margin:auto}
+.howwework h2{text-align:center;margin-bottom:16px}
 .process{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:40px;
-  margin-top:56px;
+  margin-top:48px;
 }
-.step{text-align:center}
+.step{position:relative;text-align:center}
+.step:not(:last-child):after{
+  content:"";
+  position:absolute;
+  top:26px;
+  left:100%;
+  width:40px;
+  height:1px;
+  background:rgba(255,255,255,.25);
+}
 .step .num{
   width:52px;height:52px;
   border-radius:50%;
   background:var(--icon-tint);
   color:var(--blue2);
-  font-family:var(--font-heading);
-  font-weight:800;
-  font-size:16px;
   display:flex;align-items:center;justify-content:center;
   margin:0 auto 20px;
 }
-.step h3{margin:0 0 10px;font-family:var(--font-heading);color:var(--navy);font-size:17px;font-weight:700}
-.step p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.7}
+.step .num svg{width:22px;height:22px}
+.step h3{margin:0 0 10px;font-family:var(--font-heading);font-size:17px;font-weight:700}
+.howwework .step h3{color:#fff}
+.step p{margin:0;font-size:14.5px;line-height:1.7}
 
-/* Outcomes — on the dark section */
-.outcomes{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:24px;
-  margin-top:48px;
+.howwework .statement{
+  text-align:center;
+  font-family:var(--font-heading);
+  font-weight:700;
+  color:#fff;
+  font-size:clamp(18px,2.2vw,24px);
+  line-height:1.5;
+  margin:56px auto 32px;
+  max-width:720px;
 }
-.outcome{
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-  padding:28px 22px;
-  border-radius:16px;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.12);
-}
-.outcome strong{font-family:var(--font-heading);font-size:16px;font-weight:700;color:#fff}
-.outcome span{font-size:14px;color:#b8d0f0;line-height:1.6}
-
-/* Closing CTA band */
-.cta{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:32px;
-  flex-wrap:wrap;
-  background:var(--soft);
-  border-radius:24px;
-  padding:56px;
-}
-.cta h2{margin:0 0 12px}
-.cta .lead{margin:0;color:var(--muted);font-size:16px;max-width:480px}
+.howwework .cta-center{display:flex;justify-content:center}
 
 @media(max-width:900px){
   .cards{grid-template-columns:repeat(2,1fr)}
-  .process{grid-template-columns:repeat(2,1fr);gap:36px}
-  .outcomes{grid-template-columns:repeat(2,1fr)}
-  .cta{padding:44px}
+  .process{grid-template-columns:repeat(2,1fr);gap:40px 36px}
+  .step:after{display:none}
+  .section.howwework{min-height:auto;padding:72px 0}
 }
 @media(max-width:600px){
   .cards{grid-template-columns:1fr}
   .process{grid-template-columns:1fr;gap:32px}
-  .outcomes{grid-template-columns:1fr}
-  .cta{flex-direction:column;align-items:flex-start;padding:36px;border-radius:18px}
+  .howwework .statement{margin:40px auto 28px}
 }

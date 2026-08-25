@@ -2,16 +2,34 @@
    Requires variables.css to be loaded first (uses --navy, --blue, --blue2,
    --muted, --line, --icon, --icon-tint, --icon-tint-hover, --font-heading). */
 
-/* Hero */
+/* Hero — supports either a CSS background image (--hero) or a background
+   <video class="hero-video-bg"> element; both get the same dark gradient
+   overlay so the text on top stays readable either way. */
 .hero{
-  min-height:clamp(540px,82vh,720px);
+  position:relative;
+  overflow:hidden;
+  min-height:95vh;
   color:#fff;
   display:flex;
   align-items:center;
-  background:
-    linear-gradient(100deg,rgba(7,27,58,.93) 0%,rgba(13,71,163,.78) 42%,rgba(13,71,163,.28) 78%),
-    var(--hero) center/cover no-repeat;
+  background:var(--hero) center/cover no-repeat;
 }
+.hero:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:linear-gradient(100deg,rgba(5,20,45,.96) 0%,rgba(7,27,58,.85) 22%,rgba(9, 50, 115, 0.5) 45%,rgba(13,71,163,.15) 65%,rgba(13,71,163,0) 85%);
+}
+.hero-video-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.hero .container{position:relative;z-index:2}
 .hero-inner{padding:140px 0;max-width:620px}
 .eyebrow{color:#9cc4f7;font-weight:700;text-transform:uppercase;letter-spacing:.09em;font-size:13px;margin-bottom:16px}
 .hero h1{font-family:var(--font-heading);font-size:clamp(36px,4.6vw,54px);line-height:1.18;letter-spacing:-.01em;margin:0 0 26px;font-weight:800}
@@ -31,7 +49,12 @@
 .btn.outline:hover{background:rgba(255,255,255,.12)}
 
 /* Generic section heading */
-.section{padding:120px 0}
+.section{
+  padding:120px 0;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+}
 .section h2{font-family:var(--font-heading);font-size:clamp(28px,3.2vw,38px);line-height:1.3;letter-spacing:-.01em;margin:0 0 28px;color:var(--navy);font-weight:700}
 .section .eyebrow{color:var(--blue2)}
 .accent{display:inline-block;width:48px;height:3px;background:var(--blue2);border-radius:2px;margin-bottom:28px}
@@ -49,9 +72,27 @@
    double spacing (especially awkward right before the footer). */
 .section.tight{padding:64px 0}
 
+/* Auto-height override — use on a short section (like a simple closing CTA)
+   that shouldn't stretch to fill the screen just because .section defaults
+   to 100vh. Content decides the height instead. */
+.section.compact{min-height:auto}
+
 /* A dark section sitting directly above the footer needs its own shade so it
    doesn't visually merge with the footer's navy background. */
 .section.dark.pre-footer{background:var(--blue)}
+
+/* Closing CTA row — heading+lead on one side, a button on the other.
+   Colors come from context: .section.dark h2/p already handle dark text. */
+.cta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:32px;
+  flex-wrap:wrap;
+}
+.cta h2{margin:0 0 12px}
+.cta .lead{margin:0;font-size:16px;max-width:480px;color:var(--muted)}
+.section.dark .cta .lead{color:#d6e6fb}
 
 /* We Connect the Systems Behind the Work — merged intro + icon grid */
 .connect{background:#fff;padding:160px 0}
@@ -94,14 +135,20 @@
 .icon-item h3{margin:0;font-family:var(--font-heading);color:var(--navy);font-size:15.5px;font-weight:600;letter-spacing:-.005em}
 
 /* Plain variant: icon + label only, no card/border/shadow */
-.icon-grid.plain{gap:64px 40px}
+.icon-grid.plain{
+  gap:88px 56px;
+  row-gap:88px;
+  column-gap:56px;
+  justify-items:center;
+}
 .icon-grid.plain .icon-item{
   background:transparent;
   border:none;
   box-shadow:none;
   padding:0;
   border-radius:0;
-  gap:18px;
+  gap:24px;
+  max-width:220px;
 }
 .icon-grid.plain .icon-item:hover{
   transform:none;
@@ -114,9 +161,9 @@
   background:transparent;
 }
 .icon-grid.plain .icon-item:hover .icon-badge{background:transparent}
-.icon-grid.plain .icon-svg{width:34px;height:34px}
+.icon-grid.plain .icon-svg{width:40px;height:40px}
 .icon-grid.plain .icon-item:hover .icon-svg{transform:translateY(-2px)}
-.icon-grid.plain .icon-item h3{font-size:15px;font-weight:600}
+.icon-grid.plain .icon-item h3{font-size:15.5px;font-weight:600;line-height:1.4}
 
 /* Global expertise section — full-bleed split: image left, dynamic gradient text panel right */
 .global{
@@ -187,4 +234,5 @@
   .icon-grid{grid-template-columns:1fr}
   .icon-grid.plain{gap:40px}
   .section.tight{padding:40px 0}
+  .cta{flex-direction:column;align-items:flex-start}
 }
