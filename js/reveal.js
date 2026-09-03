@@ -18,10 +18,12 @@
   var REVEAL_SELECTORS = [
     ".hero-inner",
     ".built-head",
+    ".connect-text",
     ".icon-grid .icon-item",
-    ".global-inner",
-    ".global-cta .global-brand",
-    ".global-cta .global-actions",
+    ".global-content",
+    ".stat",
+    ".build-next-text",
+    ".point",
     ".card",
     ".step",
     ".outcome",
@@ -29,8 +31,6 @@
     ".form-col",
     ".contact-card",
     ".office",
-    ".footer-brand",
-    ".footer-col",
     "[data-reveal]", // add data-reveal="" to any element on future pages to opt it in
   ].join(", ");
 

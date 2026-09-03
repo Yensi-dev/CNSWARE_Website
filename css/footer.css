@@ -1,42 +1,40 @@
 /* ===== CNSWARE — Footer (used by components/Footer.js) =====
    Requires variables.css to be loaded first (uses --navy, --blue2, --font-heading). */
 
-.site-footer{background:var(--navy);color:#fff;padding:72px 0 0}
+.site-footer{background:var(--navy);color:#fff;padding:0}
 .footer-grid{
   display:grid;
-  grid-template-columns:2fr 1fr;
-  gap:48px;
-  padding-bottom:52px;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  gap:24px;
+  padding-top:28px;
+  padding-bottom:28px;
 }
-.footer-logo{height:80px;width:auto;max-width:220px;display:block;object-fit:contain;margin-bottom:18px;filter:brightness(0) invert(1)}
-.footer-brand p{font-size:14px;line-height:1.75;color:#b8d0f0;max-width:340px;margin:0 0 22px}
-.footer-social{display:flex;gap:12px}
-.footer-social a{
-  width:36px;height:36px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  background:rgba(255,255,255,.08);
-  color:#dce8fb;
-  transition:background .2s ease,color .2s ease;
-}
-.footer-social a svg{width:16px;height:16px}
-.footer-social a:hover{background:var(--blue2);color:#fff}
-.footer-col h4{margin:0 0 18px;font-family:var(--font-heading);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#9cc4f7}
-.footer-col{display:flex;flex-direction:column;gap:12px}
-.footer-col a,.footer-col span{font-size:14.5px;color:#dce8fb}
-.footer-col a:hover{color:#fff}
-.footer-bottom{
-  display:flex;align-items:center;justify-content:space-between;gap:16px;
-  padding:22px 0;
-  border-top:1px solid rgba(255,255,255,.12);
-  font-size:13px;color:#8fa9cc;
+.footer-brand{display:flex;flex-direction:column;gap:10px;max-width:280px}
+.footer-logo{height:48px;width:auto;max-width:200px;display:block;object-fit:contain;filter:brightness(0) invert(1)}
+
+.footer-copyright{
+  justify-self:center;
+  font-size:13px;
+  color:#8fa9cc;
+  white-space:nowrap;
 }
 
-@media(max-width:900px){
-  .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
-  .footer-brand{grid-column:1/-1}
+.footer-social{
+  justify-self:end;
+  width:44px;height:44px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.1);
+  color:#fff;
+  transition:background .2s ease;
+  flex-shrink:0;
 }
-@media(max-width:600px){
-  .footer-grid{grid-template-columns:1fr;gap:32px}
-  .footer-brand{grid-column:auto}
-  .footer-bottom{flex-direction:column;align-items:flex-start;gap:8px}
+.footer-social svg{width:22px;height:22px}
+.footer-social:hover{background:var(--blue2)}
+
+@media(max-width:900px){
+  .footer-grid{grid-template-columns:1fr;justify-items:center;text-align:center;gap:18px}
+  .footer-brand{align-items:center;max-width:100%}
+  .footer-copyright{justify-self:center}
+  .footer-social{justify-self:center}
 }

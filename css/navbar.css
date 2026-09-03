@@ -2,13 +2,25 @@
    Requires variables.css to be loaded first (uses --navy, --blue2, --line). */
 
 .site-header{
-  position:sticky;top:0;z-index:50;
-  background:rgba(255,255,255,.97);
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:1000;
+  background:#fff;
   border-bottom:1px solid var(--line);
+  transition:transform .3s ease, box-shadow .3s ease;
 }
+.site-header.nav-hidden{
+  transform:translateY(-100%);
+}
+.site-header.nav-scrolled{
+  box-shadow:0 2px 10px rgba(8,31,70,.08);
+}
+
 .nav{height:84px;display:flex;align-items:center;justify-content:space-between;gap:28px}
 .brand{display:flex;align-items:center}
-.brand-logo{height:80px;width:auto;max-width:220px;display:block;object-fit:contain}
+.brand-logo{height:70px;width:auto;max-width:220px;display:block;object-fit:contain}
 .nav-links{display:flex;gap:34px;font-size:14.5px}
 .nav-links a{position:relative;padding:10px 0;color:var(--navy);font-weight:500}
 .nav-links a.active{font-weight:500}
@@ -16,9 +28,16 @@
   content:"";position:absolute;left:0;right:0;bottom:0;height:1.5px;background:var(--blue2)
 }
 
+/* El header ahora es fixed, así que el body necesita este espacio arriba
+   para que el contenido no arranque escondido debajo del navbar. */
+body{
+  padding-top:84px;
+}
+
 @media(max-width:900px){
   .nav{height:auto;padding:16px 0;align-items:flex-start;flex-wrap:wrap}
   .nav-links{gap:16px;flex-wrap:wrap}
+  body{padding-top:110px} /* el nav crece por el wrap de los links, ajusta si hace falta */
 }
 @media(max-width:600px){
   .brand-logo{height:38px}

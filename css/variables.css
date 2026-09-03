@@ -21,8 +21,12 @@
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
+html,body{
   margin:0;
+  padding:0;
+  height:100%;
+}
+body{
   font-family:var(--font-body);
   color:var(--ink);
   background:#fff;
@@ -32,5 +36,5 @@ body{
 }
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
-.container{width:min(1180px,92%);margin:auto}
-.narrow{max-width:760px;text-align:center}
+.container{width:100%;max-width:1420px;margin:0 auto;padding:0 4vw;box-sizing:border-box}
+.narrow{max-width:1760px;text-align:center}
