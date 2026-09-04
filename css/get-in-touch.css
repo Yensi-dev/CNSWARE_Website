@@ -169,7 +169,7 @@
 .office-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:28px;
+  gap:36px;
   margin-top:48px;
 }
 .office{
@@ -230,6 +230,29 @@
   font-size:13.5px;
   flex-shrink:0;
 }
+
+/* Office contact lines with icons */
+.office .body h3{margin-bottom:12px}
+.office-line{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:8px;
+  font-size:13px;
+  color:var(--muted);
+}
+.office-line:last-child{margin-bottom:0}
+.office-line svg{width:14px;height:14px;flex-shrink:0;color:var(--icon)}
+
+/* Hero subtitle line (between the heading and the accent bar) */
+.hero-subtitle{
+  font-size:15px;
+  font-weight:600;
+  color:#e2ecfa;
+  margin:0 0 18px;
+  max-width:none;
+}
+.hero .accent{margin-bottom:22px}
 
 @media(max-width:700px){
   .talk-band .cta{flex-direction:column;align-items:flex-start}

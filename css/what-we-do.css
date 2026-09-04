@@ -2,6 +2,12 @@
    Requires variables.css + main.css loaded first (uses --navy, --blue2,
    --muted, --line, --soft, --icon-tint, --font-heading, .section, .btn). */
 
+
+.hero-inner{max-width:560px}
+.hero .accent{margin:6px 0 24px;width:40px;height:3px}
+.hero h1{margin-bottom:8px}
+.hero p{font-size:15.5px;max-width:460px;line-height:1.75}
+
 /* Service cards */
 .cards{
   display:grid;
