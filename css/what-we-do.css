@@ -116,8 +116,29 @@
 
 /* The Outcomes That Matter — dark band, title left, 5 outcomes right */
 .outcomes{
+  position:relative;
+  overflow:hidden;
   background:var(--navy);
   padding:110px 0;
+}
+.outcomes-video-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.outcomes:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:rgba(7,27,58,.82);
+}
+.outcomes .container{
+  position:relative;
+  z-index:2;
 }
 .outcomes-grid{
   display:grid;
