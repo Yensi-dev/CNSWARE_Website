@@ -4,18 +4,30 @@
    .section, .icon-grid, .icon-item, .btn). */
 
 /* Form + contact card layout */
+.section.form-section{min-height:auto;padding:88px 0}
 .form-wrap{
   display:grid;
-  grid-template-columns:1.3fr .9fr;
-  gap:56px;
+  grid-template-columns:1.4fr .8fr;
+  gap:80px;
   align-items:start;
+}
+.form-heading{
+  font-family:var(--font-heading);
+  color:var(--blue2);
+  font-size:18px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  margin-bottom:22px;
 }
 .form-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:18px;
-  margin-top:32px;
+  gap:20px;
 }
+.field{display:flex;flex-direction:column;gap:8px}
+.field label{font-size:15px;font-weight:700;color:var(--navy)}
+.field.full,
 .form-grid .full{grid-column:1/-1}
 
 .input,
@@ -24,9 +36,9 @@
   width:100%;
   padding:14px 16px;
   border:1px solid var(--line);
-  border-radius:10px;
+  border-radius:8px;
   font-family:var(--font-body);
-  font-size:14.5px;
+  font-size:15px;
   color:var(--ink);
   background:#fff;
   transition:border-color .2s ease, box-shadow .2s ease;
@@ -38,34 +50,117 @@
   border-color:var(--blue2);
   box-shadow:0 0 0 3px rgba(28,99,201,.15);
 }
-.form-grid textarea{min-height:140px;resize:vertical}
+.form-grid textarea{min-height:130px;resize:vertical}
 .form-success{display:none;color:var(--blue);font-weight:700;margin-top:4px}
+
+.privacy-note{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:14px;
+  color:var(--muted);
+  margin:4px 0 8px;
+}
+.privacy-note svg{width:17px;height:17px;flex-shrink:0;color:var(--muted)}
 
 /* Contact / talent card */
 .contact-card{
-  background:var(--soft);
-  border-radius:20px;
-  padding:40px 34px;
+  background:#fff;
+  border-left:1px solid var(--line);
+  padding-left:48px;
 }
-.contact-card h3{margin:0 0 18px;font-family:var(--font-heading);color:var(--navy);font-size:18px;font-weight:700}
-.contact-card p{margin:0 0 22px;color:var(--muted);font-size:14.5px;line-height:1.7}
-.contact-card hr{border:0;border-top:1px solid var(--line);margin:26px 0}
-.contact-line{margin-bottom:18px;font-size:14.5px;color:var(--muted);line-height:1.6}
-.contact-line strong{display:block;color:var(--navy);font-family:var(--font-heading);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+.contact-card p{margin:0 0 18px;color:var(--muted);font-size:14.5px;line-height:1.7}
+.contact-card hr{border:0;border-top:1px solid var(--line);margin:10px 0 24px}
 
-/* Numbered badge used inside .icon-item on this page (instead of an svg icon-badge) */
-.icon-item .icon{
-  width:58px;height:58px;
-  border-radius:50%;
-  background:var(--icon-tint);
-  color:var(--blue2);
-  font-family:var(--font-heading);
-  font-weight:800;
-  font-size:20px;
-  display:flex;align-items:center;justify-content:center;
-  transition:background .2s ease;
+.contact-row{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  margin-bottom:22px;
 }
-.icon-item:hover .icon{background:var(--icon-tint-hover)}
+.contact-icon{
+  width:24px;height:24px;
+  color:var(--icon);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  margin-top:2px;
+}
+.contact-icon svg{width:22px;height:22px}
+.contact-row strong{display:block;color:var(--navy);font-family:var(--font-heading);font-size:14.5px;font-weight:700;margin-bottom:3px}
+.contact-row span{color:var(--muted);font-size:14px;line-height:1.6}
+
+.btn.outline-navy{
+  background:transparent;
+  color:var(--navy);
+  border:1.5px solid var(--navy);
+  border-radius:30px;
+  padding:10px 22px;
+  font-size:13px;
+}
+.btn.outline-navy:hover{
+  background:var(--navy);
+  color:#fff;
+}
+
+/* Global Delivery. Local Impact. — eyebrow-style heading left, 5 icons right */
+.delivery-band{min-height:auto;padding:110px 0}
+.delivery-grid{
+  display:grid;
+  grid-template-columns:0.55fr 2fr;
+  gap:64px;
+  align-items:center;
+}
+.delivery-text h3{
+  margin:0 0 10px;
+  font-family:var(--font-heading);
+  font-size:19px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.03em;
+  color:var(--blue2);
+  line-height:1.3;
+}
+.delivery-text p{
+  margin:0;
+  font-size:15px;
+  line-height:1.55;
+  color:var(--muted);
+  max-width:240px;
+  text-align: justify;
+}
+
+.delivery-band .icon-grid.cols-5{gap:0}
+.delivery-band .icon-item{
+  position:relative;
+  background:transparent;
+  border:none;
+  border-radius:0;
+  box-shadow:none;
+  padding:0 22px;
+  gap:18px;
+}
+.delivery-band .icon-item:not(:first-child):before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:0;
+  height:100%;
+  border-left:1px solid var(--line);
+}
+.delivery-band .icon-item:hover{transform:none;box-shadow:none}
+.delivery-band .icon{
+  width:auto;height:auto;
+  background:transparent;
+  color:var(--icon);
+}
+.delivery-band .icon svg{width:56px;height:56px}
+.delivery-band .icon-item h3{
+  font-size:16px;
+  font-weight:700;
+  color:var(--navy);
+  line-height:1.4;
+}
 
 /* 5-column variant of the shared .icon-grid */
 .icon-grid.cols-5{grid-template-columns:repeat(5,1fr)}
@@ -94,13 +189,69 @@
 .office .body h3{margin:0 0 8px;font-family:var(--font-heading);color:var(--blue2);font-size:16px;font-weight:700}
 .office .body p{margin:0;color:var(--muted);font-size:14px;line-height:1.7}
 
+/* Let's start a conversation — dark starry CTA band */
+.talk-band{
+  position:relative;
+  overflow:hidden;
+  background:#050d1f;
+  padding:32px 0;
+}
+.talk-band-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.talk-band:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:linear-gradient(100deg,rgba(9,34,79,.97) 0%,rgba(11,44,94,.93) 30%,rgba(9, 47, 110, 0.85) 60%,rgba(10, 53, 122, 0.7) 100%);
+}
+.talk-band .container{position:relative;z-index:2}
+.talk-band .cta{gap:24px}
+.cta-left{display:flex;align-items:center;gap:18px}
+.cta-icon{
+  width:auto;height:auto;
+  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.cta-icon svg{width:34px;height:34px}
+.talk-band h2{margin:0 0 4px;font-size:19px}
+.talk-band .lead{font-size:13.5px;color:#9fb3d6}
+
+.btn.pill{
+  border-radius:30px;
+  padding:12px 24px;
+  font-size:13.5px;
+  flex-shrink:0;
+}
+
+@media(max-width:700px){
+  .talk-band .cta{flex-direction:column;align-items:flex-start}
+  .cta-left{width:100%}
+}
+
+@media(max-width:1100px){
+  .delivery-grid{grid-template-columns:1fr;gap:32px}
+  .delivery-text{text-align:center}
+  .delivery-text p{margin-left:auto;margin-right:auto}
+}
 @media(max-width:900px){
   .form-wrap{grid-template-columns:1fr;gap:44px}
+  .contact-card{border-left:none;padding-left:0;border-top:1px solid var(--line);padding-top:36px}
   .icon-grid.cols-5{grid-template-columns:repeat(3,1fr)}
+  .delivery-band .icon-item{border-left:none;border-top:1px solid var(--line);padding:20px 12px 0}
+  .delivery-band .icon-item:first-child{border-top:none}
   .office-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:600px){
   .form-grid{grid-template-columns:1fr}
+  .delivery-band .icon-grid.cols-5{grid-template-columns:repeat(2,1fr);gap:32px 20px}
   .icon-grid.cols-5{grid-template-columns:repeat(2,1fr)}
   .office-grid{grid-template-columns:1fr}
 }

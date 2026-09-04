@@ -134,7 +134,7 @@
   position:absolute;
   inset:0;
   z-index:1;
-  background:rgba(7,27,58,.82);
+  background:linear-gradient(100deg,rgba(9,34,79,.97) 0%,rgba(11,44,94,.93) 30%,rgba(9, 47, 110, 0.85) 60%,rgba(10, 53, 122, 0.7) 100%);
 }
 .outcomes .container{
   position:relative;
